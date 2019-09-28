@@ -1,24 +1,39 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import async from 'async';
+import PeopleCard from './PeopleCard'
 
-const StarWarsApi = () =>{
-    const [people, setPeople] = useState('');
+const StarWarsApi = (props) =>{
+    const [people, setPeople] = useState([]);
+
 
     useEffect(() => {
-    async function fetchData() {
-        try{
-            const people = await axios.get(
-                "https://swapi.co/documentation#people"
-            );
-            setPeople(people.data);
-        } catch(err) {
+        axios
+        .get(
+            `https://swapi.co/api/people`
+        )
+        .then(result =>{
+            setPeople(result.data.results);
+        })
+        .catch(err => {
             console.log(err);
-        }
-    }
-
-    fetchData();
+        });
 }, []);
 
+
+console.log(people)
+    return(
+        people.map((list, i)=>{
+            return(
+                <StarWarsApi 
+                    key = {i}
+                    name ={list.name}
+                />
+            )
+        })
+       
+    );
+
+}
 
 export default StarWarsApi;
