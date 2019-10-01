@@ -41,7 +41,18 @@ const App = () => {
 
   return (
     <div className="App">
+       <Nav next={nextPage} back={backPage} />
       <h1 className="Header">React Wars</h1>
+      <div className="blockWrap">
+        {Object.values(people).map((list, i) => (
+          <StarWarsblock
+            key={i}
+            name={list.name}
+            height={list.height}
+            birth={list.birth_year}
+          />
+        ))}
+      </div>
     </div>
   );
 }
