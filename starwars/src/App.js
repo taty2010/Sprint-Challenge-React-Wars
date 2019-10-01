@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import StarWarsblock from "./Components/StarWarsBlock";
-import Nav from "./Components/Nav";
+import StarWarsblock from "./components/StarWarsBlock";
+import Nav from "./components/Nav";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
