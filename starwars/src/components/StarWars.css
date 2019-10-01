@@ -1,8 +1,28 @@
-h1, h2, h3, p{
-    color: white;
-}
-
-.card{
-    width : 45%;
-    background-color: black;
-}
+.blockWrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  
+  .blocks {
+    width: 45%;
+    background-color: rgba(163, 111, 68, 0.9);
+    margin: 1%;
+    border-radius: 30px;
+  }
+  
+  .innerBlock {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .blocks ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .movies {
+    background-color: white;
+  }
+  
